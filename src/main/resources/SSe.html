@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    var source=new EventSource("http://localhost:8888/takeoff?longitude=115.6&latitude=37.6");
+    source.onmessage=function(event)
+    {
+        document.getElementById("result").innerHTML+=event.data + "<br />";
+    };
+</script>
+</body>
+</html>
